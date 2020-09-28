@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item <%= path === 'trends' ? 'active' : '' %>">
+                <a class="nav-link" href="/">Trends <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item <%= path === 'latest' ? 'active' : '' %>">
+                <a class="nav-link" href="/latest">Latest</a>
+            </li>
+        </ul>
+        <form action="/search" method="POST" class="form-inline my-2 my-lg-0">
+            <input hidden name="path" value="<%=path%>" />
+            <input name="searchValue" class="form-control mr-sm-2" type="search" placeholder="Search trends/latest"
+                aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
