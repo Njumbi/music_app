@@ -8,13 +8,12 @@
         <h5 class="card-title" style="margin-top: 20px;">Artists</h5>
 
         <div class="row">
-            <% for(let i =0; i < 6; i++){ %>
+            <% for(b of artists){ %>
             <div class="card" style="width: 10rem; margin-right: 20px; margin-bottom: 10px; ">
                 <img style="padding: 10px; flex: auto; width: 10rem; height: 10rem; border-radius: 50%;"
-                    src="
-                    https://images.pexels.com/photos/2513840/pexels-photo-2513840.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                    src="<%=b.image%>">
                 <div class="card-body">
-                    <h5 class="card-title">Artists </h5>
+                    <h5 class="card-title"><%= b.name %> </h5>
                 </div>
             </div>
             <% } %>
