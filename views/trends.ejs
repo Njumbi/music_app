@@ -41,7 +41,7 @@
         <!----------------Songs--------------------->
 
         <h5 class="card-title" style="margin-top: 20px;">Songs</h5>
-        <% for(let i =0; i < 6; i++){ %>
+        <% for(song of songs){ %>
         <div class="card">
             <div class="row">
                 <div class="col-md-2">
@@ -54,8 +54,9 @@
 
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title"><%= song.name%></h5>
+                        <p class="card-text"><%= song.artist.name
+                            %></p>
 
                     </div>
                 </div>
