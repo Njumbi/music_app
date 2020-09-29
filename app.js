@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
@@ -8,6 +9,9 @@ const {
 } = require('process');
 
 const MUSIC_KEY = ""
+
+
+const musicRoutes = require('./routes/music.routes')
 
 const app = express()
 
@@ -20,14 +24,7 @@ app.set('views', 'views');
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.get("/", (req, res, next) => {
-    // get music data
-    res.render('trends', {
-        path: "trends",
-        song: "songs",
-
-    })
-})
+app.use(musicRoutes)
 
 
 app.listen(7000, () => {
