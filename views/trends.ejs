@@ -25,13 +25,13 @@
 
         <h5 class="card-title" style="margin-top: 20px; ">Albums</h5>
         <div class="row">
-            <% for(let i =0; i < 6; i++){ %>
+            <% for(album of albums){ %>
             <div class="card" style="width: 10rem; margin-right: 20px; margin-bottom: 10px;">
                 <img style="height: 150px; "
                     src="https://images.pexels.com/photos/2513840/pexels-photo-2513840.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                     class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title"><%= album.name%></h5>
                 </div>
             </div>
             <% } %>
