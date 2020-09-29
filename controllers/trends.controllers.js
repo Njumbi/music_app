@@ -26,10 +26,15 @@ exports.fetchTrends = async (req, res, next) => {
         const albumData = await axios.get(`http://ws.audioscrobbler.com//2.0/?method=tag.gettopalbums&tag=disco&api_key=${process.env.LASTFM_KEY}&format=json&limit=12`)
         const data = albumData.data.albums.album
 
+        //get songs
+        const songData = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=${process.env.LASTFM_KEY}&format=json&limit=12` )
+        const sData = songData.data.tracks.track
+
         res.render('trends', {
             path: 'trends',
             artists: artists,
-            albums:data,
+            albums: data,
+            songs: sData
 
         })
     } catch (e) {
